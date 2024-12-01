@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/backgroundbox">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="209dp"
+        android:layout_height="52dp"
+        android:background="@drawable/backgroud"
+        android:text="VERIFY OTP"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/otpverification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTP Verification"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pleaseenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.883" />
+
+    <TextView
+        android:id="@+id/pleaseenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Enter the OTP sent to you"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <EditText
+            android:id="@+id/box1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/backgroundbox"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:importantForAutofill="no"
+            android:imeOptions="actionNext"
+            android:labelFor="@id/box1"
+            android:hint="0"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/box2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:importantForAutofill="no"
+            android:imeOptions="actionNext"
+            android:hint="0"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/box4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:importantForAutofill="no"
+            android:imeOptions="actionNext"
+            android:hint="0"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/box5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:importantForAutofill="no"
+            android:imeOptions="actionNext"
+            android:hint="0"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/box6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:importantForAutofill="no"
+            android:imeOptions="actionNext"
+            android:hint="0"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/box3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:importantForAutofill="no"
+            android:hint="0"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.218"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/didnot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't receive any otp?" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="Resend code"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.784"
+        app:srcCompat="@drawable/otp1" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
