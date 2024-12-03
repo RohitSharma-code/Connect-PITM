@@ -7,70 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/verifyOtp"
         android:layout_width="209dp"
         android:layout_height="52dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/backgroud"
         android:text="VERIFY OTP"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/vector"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.12" />
+
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/otpverification"
+        android:id="@+id/otpVerification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="OTP Verification"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/pleaseenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pleaseenter"
+        android:id="@+id/pleaseEnter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Please Enter the OTP sent to you"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
-
+        app:layout_constraintTop_toBottomOf="@+id/otpVerification" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-16dp">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="0dp">
 
         <EditText
             android:id="@+id/box1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/backgroundbox"
-            android:textSize="14sp"
-            android:inputType="number"
-            android:maxLength="1"
-            android:importantForAutofill="no"
-            android:imeOptions="actionNext"
-            android:labelFor="@id/box1"
+            android:gravity="center"
             android:hint="0"
-            android:gravity="center"/>
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/box1"
+            android:maxLength="1"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/box2"
@@ -78,55 +76,13 @@
             android:layout_height="50dp"
             android:layout_marginLeft="4dp"
             android:background="@drawable/backgroundbox"
-            android:textSize="14sp"
+            android:gravity="center"
+            android:hint="0"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
             android:inputType="number"
             android:maxLength="1"
-            android:importantForAutofill="no"
-            android:imeOptions="actionNext"
-            android:hint="0"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/box4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/backgroundbox"
-            android:textSize="14sp"
-            android:inputType="number"
-            android:maxLength="1"
-            android:importantForAutofill="no"
-            android:imeOptions="actionNext"
-            android:hint="0"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/box5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/backgroundbox"
-            android:textSize="14sp"
-            android:inputType="number"
-            android:maxLength="1"
-            android:importantForAutofill="no"
-            android:imeOptions="actionNext"
-            android:hint="0"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/box6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/backgroundbox"
-            android:textSize="14sp"
-            android:inputType="number"
-            android:maxLength="1"
-            android:importantForAutofill="no"
-            android:imeOptions="actionNext"
-            android:hint="0"
-            android:gravity="center"/>
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/box3"
@@ -134,12 +90,54 @@
             android:layout_height="50dp"
             android:layout_marginLeft="4dp"
             android:background="@drawable/backgroundbox"
-            android:textSize="14sp"
+            android:gravity="center"
+            android:hint="0"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
             android:inputType="number"
             android:maxLength="1"
-            android:importantForAutofill="no"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/box4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:gravity="center"
             android:hint="0"
-            android:gravity="center"/>
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/box5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:gravity="center"
+            android:hint="0"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/box6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/backgroundbox"
+            android:gravity="center"
+            android:hint="0"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -147,20 +145,20 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.218"
+        app:layout_constraintBottom_toTopOf="@+id/verifyOtp"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:id="@+id/didnot"
+            android:id="@+id/didNot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Didn't receive any otp?" />
 
         <TextView
+            android:id="@+id/resendCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
@@ -169,27 +167,26 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/otp"
         android:layout_width="120dp"
         android:layout_height="100dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784"
-        app:srcCompat="@drawable/otp1" />
+        app:layout_constraintTop_toBottomOf="@+id/pleaseEnter"
+        app:srcCompat="@drawable/otp" />
 
     <ImageView
+        android:id="@+id/vector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/vector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
