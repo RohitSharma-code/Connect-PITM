@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        slidePhoto()
+        //Call tha slidePhoto()
+//        slidePhoto()
 
     }
 
