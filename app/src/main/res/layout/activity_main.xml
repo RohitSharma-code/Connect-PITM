@@ -13,7 +13,7 @@
         android:layout_width="209dp"
         android:layout_height="52dp"
         android:layout_marginBottom="28dp"
-        android:background="@drawable/backgroud"
+        android:background="@drawable/backgroud_for_button"
         android:text="VERIFY OTP"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/vector"
