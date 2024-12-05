@@ -18,8 +18,9 @@ class MainActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_main)
 //        setContentView(R.layout.activity_main2)
 //        setContentView(R.layout.activity_main3)
-        setContentView(R.layout.activity_main4)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main4)) { v, insets ->
+//        setContentView(R.layout.activity_main4)
+        setContentView(R.layout.activity_main5)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main5)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
