@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/signup">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:gravity="center_vertical"
+        android:padding="32dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/stayConnected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stay connected"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
+
+    <TextView
+        android:id="@+id/enterYourEmail"
+        android:layout_width="348dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="8dp"
+        android:text="Enter your email address and password to create your account"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/emailBox"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edit_text_background"
+        android:hint="  Email"
+         />
+
+    <EditText
+        android:id="@+id/passwordBox"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_text_background"
+        android:hint="  Password"
+        />
+
+    <EditText
+        android:id="@+id/confirmPasswordBox"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_text_background"
+        android:hint="  Confirm password"
+         />
+
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/rounded_button"
+            android:text="sign up" />
+
+        <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/dontHaveAnAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="Login"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wavesvg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

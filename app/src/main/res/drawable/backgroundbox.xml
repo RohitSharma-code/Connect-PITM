@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Gradient stroke -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#0091EA"
+                android:endColor="#005284"
+                android:angle="45" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Inner solid area -->
+    <item android:left="2dp" android:right="2dp" android:top="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#f2f5fa" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+
+</layer-list>
