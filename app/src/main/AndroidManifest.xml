@@ -15,25 +15,37 @@
         android:theme="@style/Theme.ConnectPITM"
         tools:targetApi="31">
         <activity
-            android:name=".quickView_dashboard"
+            android:name=".quickView.enquiryForm"
             android:exported="false" />
         <activity
-            android:name=".student_dashboard"
+            android:name=".quickView.website"
             android:exported="false" />
         <activity
-            android:name=".signup"
+            android:name=".quickView.department"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".quickView.aboutUs"
             android:exported="false" />
         <activity
-            android:name=".login_As"
+            android:name=".quickView.quickView_dashboard"
             android:exported="false" />
         <activity
-            android:name=".otp_Verification"
+            android:name=".activities.student_dashboard"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.signup"
+            android:exported="false" />
+        <activity
+            android:name=".activities.login"
+            android:exported="false" />
+        <activity
+            android:name=".activities.login_As"
+            android:exported="false" />
+        <activity
+            android:name=".activities.otp_Verification"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

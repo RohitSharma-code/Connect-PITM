@@ -1,4 +1,4 @@
-package com.example.connectpitm
+package com.example.connectpitm.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.connectpitm.R
+import com.example.connectpitm.models.dashboardModel
 
 //      Adapter
 //      moduleList stores the image and module names

@@ -28,7 +28,7 @@
         <ImageView
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:background="@drawable/drawer_header_logo"
+            android:background="@drawable/pitm_logo_modified"
             app:layout_constraintBottom_toTopOf="@+id/txt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

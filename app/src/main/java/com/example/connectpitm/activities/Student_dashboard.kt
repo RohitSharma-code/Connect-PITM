@@ -1,4 +1,4 @@
-package com.example.connectpitm
+package com.example.connectpitm.activities
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.codebyashish.autoimageslider.AutoImageSlider
 import com.codebyashish.autoimageslider.Enums.ImageScaleType
 import com.codebyashish.autoimageslider.Models.ImageSlidesModel
+import com.example.connectpitm.R
+import com.example.connectpitm.adapters.dashboard_Adapter
+import com.example.connectpitm.models.dashboardModel
 import com.google.android.material.appbar.MaterialToolbar
 
 class student_dashboard : AppCompatActivity() {
@@ -78,9 +81,9 @@ class student_dashboard : AppCompatActivity() {
         val autoImageSlider = findViewById<AutoImageSlider>(R.id.autoImageSlider)
 
         // add some imagees or titles (text) inside the imagesArrayList
-        autoImageList.add(ImageSlidesModel( R.drawable.slide1,""))
+        autoImageList.add(ImageSlidesModel(R.drawable.slide1,""))
         autoImageList.add(ImageSlidesModel(R.drawable.slide2,""))
-        autoImageList.add(ImageSlidesModel( R.drawable.slide3,""))
+        autoImageList.add(ImageSlidesModel(R.drawable.slide3,""))
 
         // set the added images inside the AutoImageSlider
         autoImageSlider.setImageList(autoImageList, ImageScaleType.FIT)

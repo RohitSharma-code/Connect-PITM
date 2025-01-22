@@ -49,6 +49,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.github.dangiashish:Auto-Image-Slider:1.0.6")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.webkit:webkit:1.9.0")
 
 
 }

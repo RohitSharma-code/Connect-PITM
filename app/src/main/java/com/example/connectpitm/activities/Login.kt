@@ -1,24 +1,23 @@
-package com.example.connectpitm
+package com.example.connectpitm.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.connectpitm.R.anim.slide_out_right
+import com.example.connectpitm.R
 
-class login_As : AppCompatActivity() {
+class login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login_as)
-        val quickView_btn : Button = findViewById(R.id.studentButton)
+        setContentView(R.layout.activity_login)
+        val quickView_btn : TextView = findViewById(R.id.signUp)
         quickView_btn.setOnClickListener {
             // Explicit Intent to navigate to SecondActivity
-            val intent = Intent(this, login::class.java)
+            val intent = Intent(this, signup::class.java)
             startActivity(intent) // Start SecondActivity
+
         }
 
     }
