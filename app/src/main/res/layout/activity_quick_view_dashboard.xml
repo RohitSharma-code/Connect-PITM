@@ -80,11 +80,15 @@ android:fitsSystemWindows="true"
         android:text="Prajnanananda Institute of Technology &amp; Management
             \n94/2, Park Street. Kolkata 700017.."/>
     <TextView
+        android:id="@+id/Map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textStyle="bold"
+        android:focusable="true"
         android:text="Near Park Circus 7 point. "
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
         android:drawableEnd="@drawable/location_svg"/>
 
     </LinearLayout>

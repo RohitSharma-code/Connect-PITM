@@ -1,8 +1,10 @@
 package com.example.connectpitm.quickView
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -60,9 +62,10 @@ class quickView_dashboard : AppCompatActivity() {
         val moduleList = listOf(
             quickView_dashboardModel("About Us", aboutUs::class.java),
             quickView_dashboardModel("Department", department::class.java),
-            quickView_dashboardModel("Website", website::class.java),
+            quickView_dashboardModel("Website", null, "https://pitmkol.com"), // Specify the URL
             quickView_dashboardModel("Enquiry Form", enquiryForm::class.java)
         )
+
 
 
         // Initialize the adapter with the module list
@@ -73,10 +76,21 @@ class quickView_dashboard : AppCompatActivity() {
         adapter.setOnItemClickListener(object : quickView_dashboard_Adapter.onItemClickListener {
             override fun onItemClick(position: Int) {
                 val selectedItem = moduleList[position]
-                val intent = Intent(this@quickView_dashboard, selectedItem.activityClass)
-                startActivity(intent)
+
+                if (selectedItem.url != null) {
+                    // Open the URL in a browser
+                    val intent = Intent(Intent.ACTION_VIEW).apply {
+                        data = Uri.parse(selectedItem.url)
+                    }
+                    startActivity(intent)
+                } else if (selectedItem.activityClass != null) {
+                    // Navigate to the specified activity
+                    val intent = Intent(this@quickView_dashboard, selectedItem.activityClass)
+                    startActivity(intent)
+                }
             }
         })
+
 
 
         // Create an imageArrayList to hold ImageSlideModel objects
@@ -95,6 +109,24 @@ class quickView_dashboard : AppCompatActivity() {
 
         // Set default animation for the ImageSlider
         autoImageSlider.setDefaultAnimation()
+
+
+
+        // MAP intent
+        val locationButton: TextView = findViewById(R.id.Map)
+        // Set a click listener for the button
+        locationButton.setOnClickListener {
+            // The desired location as a geo URI
+            val geoUri = "geo:48.8584,2.2945"
+
+            // Create an implicit intent
+            val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(geoUri))
+
+            // Ensure there’s an app to handle the intent
+            if (mapIntent.resolveActivity(packageManager) != null) {
+                startActivity(mapIntent)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

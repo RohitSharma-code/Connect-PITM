@@ -15,6 +15,12 @@
         android:theme="@style/Theme.ConnectPITM"
         tools:targetApi="31">
         <activity
+            android:name=".quickView.BCA"
+            android:exported="false" />
+        <activity
+            android:name=".quickView.BBA"
+            android:exported="false" />
+        <activity
             android:name=".quickView.enquiryForm"
             android:exported="false" />
         <activity

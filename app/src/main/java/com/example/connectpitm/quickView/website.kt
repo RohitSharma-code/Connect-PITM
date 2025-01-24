@@ -12,5 +12,7 @@ class website : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_website)
+
+
     }
 }
