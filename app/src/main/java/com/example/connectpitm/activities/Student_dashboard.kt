@@ -25,7 +25,6 @@ class student_dashboard : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_student_dashboard)
 
         // Initialize DrawerLayout
@@ -44,13 +43,6 @@ class student_dashboard : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        // Handle edge-to-edge insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.student_dashboard)) { view, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         // Setup RecyclerView
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)

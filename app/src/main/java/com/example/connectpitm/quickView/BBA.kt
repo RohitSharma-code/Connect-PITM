@@ -57,7 +57,6 @@ class BBA : AppCompatActivity() {
 
         h2 {
             color: darkgreen;
-            margin-top: 10px;
             font-size: 24px;
         }
 

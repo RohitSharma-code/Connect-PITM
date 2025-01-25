@@ -2,4 +2,22 @@
     <string name="app_name">Connect PITM</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="clgRollNo">Should be 10 digit</string>
+    <string name="emailId">Enter Valid Email</string>
+    <string name="passwordCriteria">Password must at least 8 character
+                                    \nHave at least 1 number (1,2,3...)
+                                    \nHave at least 1 lowercase alphabet
+                                    \nHave at least 1 uppercase alphabet
+                                    \nHave at least 1 special character(@#$%^&amp;+=!)</string>
+    <string name="selectSem">Select Semester</string>
+    <string-array name="semester">
+        <item>Semester 1</item>
+        <item>Semester 2</item>
+        <item>Semester 3</item>
+        <item>Semester 4</item>
+        <item>Semester 5</item>
+        <item>Semester 6</item>
+        <item>Semester 7</item>
+        <item>Semester 8</item>
+    </string-array>
 </resources>

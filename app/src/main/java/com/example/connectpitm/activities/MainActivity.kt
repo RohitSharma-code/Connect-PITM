@@ -11,7 +11,6 @@ import com.example.connectpitm.quickView.quickView_dashboard
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         val quickView_btn : Button = findViewById(R.id.quickView_btn)

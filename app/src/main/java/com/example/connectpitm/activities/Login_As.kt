@@ -10,7 +10,6 @@ import com.example.connectpitm.R
 class login_As : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login_as)
         val quickView_btn : Button = findViewById(R.id.studentButton)
         quickView_btn.setOnClickListener {

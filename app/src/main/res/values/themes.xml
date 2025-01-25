@@ -3,7 +3,7 @@
     <style name="BaseTheme.ConnectPITM" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowFullscreen">false</item>
     </style>
 
     <style name="Theme.ConnectPITM" parent="BaseTheme.ConnectPITM" />

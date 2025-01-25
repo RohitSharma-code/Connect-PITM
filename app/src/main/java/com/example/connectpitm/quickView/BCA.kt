@@ -57,7 +57,6 @@ class BCA : AppCompatActivity() {
 
         h2 {
             color: darkgreen;
-            margin-top: 10px;
             font-size: 24px;
         }
 
@@ -168,7 +167,7 @@ class BCA : AppCompatActivity() {
             font-weight: bold;
         }
     </style>
-</head>
+</head>`
 <body>
     <div class="container">
         <!-- Title Section -->

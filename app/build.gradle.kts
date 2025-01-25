@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -51,6 +54,6 @@ dependencies {
     implementation("com.github.dangiashish:Auto-Image-Slider:1.0.6")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.webkit:webkit:1.9.0")
-
+    implementation("com.github.skydoves:balloon:1.6.12") //For Balloon like tooltip
 
 }
