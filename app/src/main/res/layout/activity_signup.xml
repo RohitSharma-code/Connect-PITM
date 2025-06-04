@@ -50,13 +50,22 @@
                 android:paddingLeft="18dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                style="@style/MyTextInputLayoutAppereance"
                 android:layout_width="296dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                app:boxStrokeColor="@color/boxStrokeColour"
+                app:boxStrokeColor="@color/box_stroke_selector"
                 app:boxBackgroundMode="outline"
-                app:boxStrokeWidth="2dp"
+                app:hintTextColor="@color/boxStrokeColour"
+                android:hint="@string/selectSem"
+                app:hintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:expandedHintEnabled="false"
+                app:boxCornerRadiusTopStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxStrokeWidth="1dp"
                 android:layout_gravity="center">
 
                 <!-- Inside text input layout add
@@ -66,9 +75,14 @@
                     android:id="@+id/autoCompleteTextView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:inputType="none"
-                    android:hint="@string/selectSem" />
+                    android:hint="@string/selectSem"
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false"
+                    android:importantForAutofill="no"
+                    android:dropDownHeight="wrap_content"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 

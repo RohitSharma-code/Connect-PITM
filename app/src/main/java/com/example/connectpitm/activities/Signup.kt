@@ -6,10 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
@@ -32,19 +30,24 @@ class signup : AppCompatActivity() {
         binding.signUpBtn.setOnClickListener {
             validateFields() //validate the conditions
         }
-        setUpDrawableClickListener() //Calling the function
+        setUpDrawableClickListener() //Calling the EndDrawable click function
+        dropDown() //Calling the dropDown function
 
+    }
+
+    //For DropDown Menu list
+    fun dropDown() {
         // get reference to the string array that we just created
-        val languages = resources.getStringArray(R.array.semester)
+        val semester = resources.getStringArray(R.array.semester)
         // create an array adapter and pass the required parameter
         // in our case pass the context, drop down layout , and array.
-        val arrayAdapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, languages)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, semester)
         // get reference to the autocomplete text view
         val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
         // set adapter to the autocomplete tv to the arrayAdapter
         autocompleteTV.setAdapter(arrayAdapter)
-
     }
+
 
     //setting the attributes of all edit text in separate function
     fun setUpDrawableClickListener() {
@@ -108,6 +111,7 @@ class signup : AppCompatActivity() {
         val clgRollNo = binding.clgRollNoBox.text.toString()
         val email = binding.emailBox.text.toString()
         val password = binding.passwordBox.text.toString()
+        val dropDown = binding.autoCompleteTextView.text.toString()
 
         //Accessing the drawable file
         val drawable = ContextCompat.getDrawable(this, R.drawable.exclamation_mark)

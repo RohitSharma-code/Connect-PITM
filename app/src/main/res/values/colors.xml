@@ -6,4 +6,7 @@
     <color name="blue1">#0091EA</color>
     <color name="boxStrokeColour">#2D4990</color>
     <color name="backgroundColour">#f2f5fa</color>
+    <color name="your_primary">#3F51B5</color>
+    <color name="your_on_primary">#FFFFFF</color>
+    <color name="your_variant">#303F9F</color>
 </resources>
