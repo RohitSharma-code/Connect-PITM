@@ -8,11 +8,13 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.connectpitm.R
+import com.example.connectpitm.activities.Registration_Successful
 import com.example.connectpitm.databinding.ActivitySignupBinding
 import com.skydoves.balloon.ArrowPositionRules
 import com.skydoves.balloon.Balloon
@@ -33,9 +35,16 @@ class signup : AppCompatActivity() {
         setUpDrawableClickListener() //Calling the EndDrawable click function
         dropDown() //Calling the dropDown function
 
+        binding.login.setOnClickListener {
+            val intent = Intent(this, login::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+
+        }
+
     }
 
-    //For DropDown Menu list
+    //For DropDown semester list
     fun dropDown() {
         // get reference to the string array that we just created
         val semester = resources.getStringArray(R.array.semester)
@@ -74,7 +83,12 @@ class signup : AppCompatActivity() {
         return password.matches(passwordPattern)
     }
 
+    fun tenDigitRollNo(rollNo: String): Boolean{
+        val tenDigit = Regex(".{10}$")
+        return rollNo.matches(tenDigit)
+    }
     //Creating the popupWindow like balloon
+    @SuppressLint("SuspiciousIndentation")
     fun createBalloon(
         context: Context,
         text: Int,
@@ -121,15 +135,21 @@ class signup : AppCompatActivity() {
         binding.emailBox.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
         binding.passwordBox.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
 
+
         //Switch case
         when {
-            clgRollNo.isEmpty() -> {
+            clgRollNo.isEmpty() || !tenDigitRollNo(clgRollNo) -> {
                 binding.clgRollNoBox.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null)
                 createBalloon(
                     this, R.string.clgRollNo,
                     binding.clgRollNoBox
                 )
                 return
+            }
+
+            dropDown.isEmpty() -> {
+                Toast.makeText(this, "Please select the semester", Toast.LENGTH_SHORT).show()
+
             }
 
             email.isEmpty() || !isValidEmail(email) -> {
@@ -152,9 +172,11 @@ class signup : AppCompatActivity() {
             }
 
             else -> {
-                if (clgRollNo.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-                    val intent = Intent(this, login::class.java)
+                if (clgRollNo.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && dropDown.isNotEmpty()) {
+                    val intent = Intent(this, Registration_Successful::class.java)
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent) // Start SecondActivity
+
                 }
             }
         }

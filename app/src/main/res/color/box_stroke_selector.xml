@@ -2,6 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Focused state -->
     <item android:color="@color/boxStrokeColour" android:state_focused="true" />
+    <!-- Error State-->
+    <item android:color="@color/red" android:state_enabled="true"/>
     <!-- Normal state -->
     <item android:color="@color/boxStrokeColour"/>
 </selector>

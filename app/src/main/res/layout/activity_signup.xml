@@ -50,6 +50,7 @@
                 android:paddingLeft="18dp" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dropDownLayout"
                 style="@style/MyTextInputLayoutAppereance"
                 android:layout_width="296dp"
                 android:layout_height="wrap_content"
@@ -65,6 +66,7 @@
                 app:boxCornerRadiusTopEnd="18dp"
                 app:boxCornerRadiusBottomStart="18dp"
                 app:boxCornerRadiusBottomEnd="18dp"
+                android:background="#f2f5fa"
                 app:boxStrokeWidth="1dp"
                 android:layout_gravity="center">
 
@@ -134,7 +136,7 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/signUp"
+                    android:id="@+id/login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
@@ -156,5 +158,4 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

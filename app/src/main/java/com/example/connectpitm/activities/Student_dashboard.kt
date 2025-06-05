@@ -1,7 +1,11 @@
 package com.example.connectpitm.activities
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -16,12 +20,15 @@ import com.codebyashish.autoimageslider.Models.ImageSlidesModel
 import com.example.connectpitm.R
 import com.example.connectpitm.adapters.dashboard_Adapter
 import com.example.connectpitm.models.dashboardModel
+import com.example.connectpitm.quickView.quickView_dashboard
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.navigation.NavigationView
 
 class student_dashboard : AppCompatActivity() {
 
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +89,49 @@ class student_dashboard : AppCompatActivity() {
 
         // set any default animation or custom animation (setSlideAnimation(ImageAnimationTypes.ZOOM_IN))
         autoImageSlider.setDefaultAnimation()
+
+        //Navigation view id initialize
+        navigationView = findViewById(R.id.navView)
+        //Function for navigation drawer items
+        navigationView.setNavigationItemSelectedListener(){
+            when(it.itemId){
+                R.id.contact -> {openDialerWithNumber("8697580473")}
+                R.id.emailMenu -> {openGmail()}
+                R.id.rateUs -> {
+                    Toast.makeText(this, "Rate Us Clicked", Toast.LENGTH_LONG).show()
+                }
+                R.id.share -> {shareAppLink(this)}
+            }
+            true
+        }
+    }
+
+    //Open Dialer
+    private fun openDialerWithNumber(phoneNumber: String){
+        val intent = Intent(Intent.ACTION_DIAL)
+        intent.data = Uri.parse("tel: $phoneNumber")
+        startActivity(intent)
+    }
+
+    //Sharing the app(Implicit Intent)
+    private fun shareAppLink(context: Context){
+        val packageName = context.packageName
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain")
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT,"App Recommendation")
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "Hey Checkout this awesome app! ${gPlayAppLink(packageName)}")
+        startActivity(shareIntent)
+    }
+    private fun gPlayAppLink(packageName: String): String{
+        return "https://play.google.com/store/apps/details?id=$packageName"
+    }
+
+    //Open Gmail
+    private fun openGmail(){
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:connectpitm@gmail.com")
+        }
+        startActivity(intent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

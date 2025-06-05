@@ -49,16 +49,16 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/gmail"
+            app:layout_constraintBottom_toTopOf="@+id/user"
             tools:layout_editor_absoluteY="131dp" />
 
         <TextView
-            android:id="@+id/gmail"
+            android:id="@+id/user"
             style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
-            android:text="connectpitm@gmail.com"
+            android:text="User"
             android:textColor="#212529"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +73,9 @@
             android:textColor="#212529"
             android:textSize="24sp"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/gmail"
-            app:layout_constraintLeft_toLeftOf="@id/gmail"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@id/user"
+            app:layout_constraintLeft_toLeftOf="parent"
           />
 
 

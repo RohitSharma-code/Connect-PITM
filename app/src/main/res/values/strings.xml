@@ -20,4 +20,5 @@
         <item>Semester 7</item>
         <item>Semester 8</item>
     </string-array>
+    <string name="thankYouGreeting">Thanks for Registering to PITM, we will verify your details and meet you shortly.</string>
 </resources>

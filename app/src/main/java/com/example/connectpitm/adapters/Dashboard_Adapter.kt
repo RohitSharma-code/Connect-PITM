@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.connectpitm.R
 import com.example.connectpitm.models.dashboardModel
+import com.example.connectpitm.quickView.quickView_dashboard
 
 //      Adapter
 //      moduleList stores the image and module names
@@ -37,4 +38,6 @@ class dashboard_Adapter(val moduleList: List<dashboardModel>)
         holder.moduleNameView.setText(moduleList[position].moduleName)
         holder.moduleImageView.setImageResource(moduleList[position].moduleImage)
     }
+
+
 }

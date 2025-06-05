@@ -5,6 +5,9 @@
     <item android:id="@+id/contact"
         android:title="Contact"
         android:icon="@drawable/contact"/>
+    <item android:id="@+id/emailMenu"
+        android:title="Email"
+        android:icon="@drawable/email_icon"/>
     <item android:id="@+id/rateUs"
         android:title="Rate Us"
         android:icon="@drawable/rateus"/>

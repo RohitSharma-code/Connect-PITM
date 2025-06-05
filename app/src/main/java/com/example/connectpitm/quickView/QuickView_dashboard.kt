@@ -136,21 +136,13 @@ class quickView_dashboard : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener(){
             when(it.itemId){
                 R.id.contact -> {openDialerWithNumber("8697580473")}
+                R.id.emailMenu -> {openGmail()}
                 R.id.rateUs -> {
                     Toast.makeText(this, "Rate Us Clicked", Toast.LENGTH_LONG).show()
                 }
                 R.id.share -> {shareAppLink(this)}
             }
             true
-        }
-
-        //Set Navigation Drawer email click listener
-        val headerView = navigationView.getHeaderView(0)
-        var gmail: TextView = headerView.findViewById(R.id.gmail)
-        gmail.setOnClickListener(){
-            val intent = Intent(Intent.ACTION_SENDTO)
-            intent.data = Uri.parse("mailto:connectpitm@gmail.com")
-            startActivity(intent)
         }
     }
 
@@ -162,6 +154,7 @@ class quickView_dashboard : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    //Open Dialer
     private fun openDialerWithNumber(phoneNumber: String){
         val intent = Intent(Intent.ACTION_DIAL)
         intent.data = Uri.parse("tel: $phoneNumber")
@@ -179,5 +172,13 @@ class quickView_dashboard : AppCompatActivity() {
     }
     private fun gPlayAppLink(packageName: String): String{
         return "https://play.google.com/store/apps/details?id=$packageName"
+    }
+
+    //Open Gmail
+    private fun openGmail(){
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:connectpitm@gmail.com")
+        }
+        startActivity(intent)
     }
 }
