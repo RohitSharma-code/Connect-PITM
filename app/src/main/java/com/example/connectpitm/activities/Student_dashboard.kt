@@ -67,7 +67,39 @@ class student_dashboard : AppCompatActivity() {
         )
 
         // Set Adapter
-        val adapter = dashboard_Adapter(moduleList)
+        val adapter = dashboard_Adapter(moduleList){model ->
+            when(model.moduleName){
+                "Website" -> {
+                    val url = "https://www.pitmkol.com"
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(intent)
+                }
+
+                "Portal" -> {
+                    val url = "https://www.makautexam.net/"
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(intent)
+                }
+
+                "Notes" -> {
+                    Toast.makeText(this, "Notes Clicked", Toast.LENGTH_SHORT).show()
+                }
+
+                "Notice" -> {
+                    Toast.makeText(this, "Notice Clicked", Toast.LENGTH_SHORT).show()
+                }
+
+                "Faculty" -> {
+                    Toast.makeText(this, "Faculty Clicked", Toast.LENGTH_SHORT).show()
+                }
+
+                "Maps" -> {
+                    val geoUri = "https://www.google.com/maps/place/Prajnanananda+Institute+Of+Technology+%26+Management/@22.5417973,88.3674832,17z/data=!3m1!4b1!4m6!3m5!1s0x3a0276e0cbc50b91:0x56bda8626e2aaa17!8m2!3d22.5417973!4d88.3674832!16s%2Fg%2F11g8bt7851?entry=ttu&g_ep=EgoyMDI1MDEyMi4wIKXMDSoASAFQAw%3D%3D"
+                    val map = Intent(Intent.ACTION_VIEW, Uri.parse(geoUri))
+                    startActivity(map)
+                }
+            }
+        }
         recyclerView.adapter = adapter // Line Added
 
 
