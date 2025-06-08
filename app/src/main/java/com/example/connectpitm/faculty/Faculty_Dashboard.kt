@@ -1,4 +1,4 @@
-package com.example.connectpitm.activities
+package com.example.connectpitm.faculty
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,65 +18,65 @@ import com.codebyashish.autoimageslider.AutoImageSlider
 import com.codebyashish.autoimageslider.Enums.ImageScaleType
 import com.codebyashish.autoimageslider.Models.ImageSlidesModel
 import com.example.connectpitm.R
+import com.example.connectpitm.adapters.Faculty_Adapter
 import com.example.connectpitm.adapters.dashboard_Adapter
-import com.example.connectpitm.faculty.Faculty_Details
+import com.example.connectpitm.models.Faculty_Model
 import com.example.connectpitm.models.dashboardModel
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 
-class student_dashboard : AppCompatActivity() {
-
-    private lateinit var toggle: ActionBarDrawerToggle
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navigationView: NavigationView
+class Faculty_Dashboard : AppCompatActivity() {
+    private lateinit var toggle_faculty: ActionBarDrawerToggle
+    private lateinit var drawerLayout_faculty: DrawerLayout
+    private lateinit var navigationView_faculty: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_student_dashboard)
+        setContentView(R.layout.activity_faculty_dashboard)
 
         // Initialize DrawerLayout
-        drawerLayout = findViewById(R.id.student_dashboard)
+        drawerLayout_faculty = findViewById(R.id.faculty_dash)
 
         // Initialize Toolbar
-        val toolbar: MaterialToolbar = findViewById(R.id.topAppBar)
+        val toolbar: MaterialToolbar = findViewById(R.id.topAppBar_fac)
         setSupportActionBar(toolbar)
 
         // Ensure the navigation icon remains the same
         toolbar.setNavigationIcon(R.drawable.navigation_iconsvg)
 
         // Setup ActionBarDrawerToggle
-        toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        toggle_faculty = ActionBarDrawerToggle(this, drawerLayout_faculty, toolbar, R.string.open, R.string.close)
+        drawerLayout_faculty.addDrawerListener(toggle_faculty)
+        toggle_faculty.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Setup RecyclerView
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView_fac)
         recyclerView.layoutManager = GridLayoutManager(this, 2) // Corrected Line
-             // Line Changed
+        // Line Changed
 
         // Populate DataSource
         val moduleList = listOf(
-            dashboardModel("Website", R.drawable.moduleimg1),
-            dashboardModel("Portal", R.drawable.moduleimg2),
-            dashboardModel("Notes", R.drawable.moduleimg3),
-            dashboardModel("Notice", R.drawable.moduleimg4),
-            dashboardModel("Faculty", R.drawable.moduleimg5),
-            dashboardModel("Maps", R.drawable.moduleimg6)
+            Faculty_Model("Website", R.drawable.moduleimg1),
+            Faculty_Model("Portal", R.drawable.moduleimg2),
+            Faculty_Model("Notes", R.drawable.moduleimg3),
+            Faculty_Model("Notice", R.drawable.moduleimg4),
+            Faculty_Model("Faculty", R.drawable.moduleimg5),
+            Faculty_Model("Maps", R.drawable.moduleimg6)
         )
 
         // Set Adapter
-        val adapter = dashboard_Adapter(moduleList){model ->
-            when(model.moduleName){
+        val adapter = Faculty_Adapter(moduleList){ model ->
+            when(model.itemName){
                 "Website" -> {
-                    val url = "https://www.pitmkol.com"
+                    val url = "https://xhaccess.com/tags/xnxx-indian"
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     startActivity(intent)
                 }
 
                 "Portal" -> {
-                    val url = "https://www.makautexam.net/"
+                    val url = "https://xhaccess.com/videos/indian-teen-sali-fucked-by-her-jija-a-day-before-her-wedding-xhXZppW"
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     startActivity(intent)
                 }
@@ -107,7 +110,7 @@ class student_dashboard : AppCompatActivity() {
         val autoImageList : ArrayList<ImageSlidesModel> = ArrayList()
 
         // find and initialize ImageSlider
-        val autoImageSlider = findViewById<AutoImageSlider>(R.id.autoImageSlider)
+        val autoImageSlider = findViewById<AutoImageSlider>(R.id.autoImageSlider_fac)
 
         // add some imagees or titles (text) inside the imagesArrayList
         autoImageList.add(ImageSlidesModel(R.drawable.slide1,""))
@@ -121,9 +124,9 @@ class student_dashboard : AppCompatActivity() {
         autoImageSlider.setDefaultAnimation()
 
         //Navigation view id initialize
-        navigationView = findViewById(R.id.navView)
+        navigationView_faculty = findViewById(R.id.navView_fac)
         //Function for navigation drawer items
-        navigationView.setNavigationItemSelectedListener(){
+        navigationView_faculty.setNavigationItemSelectedListener(){
             when(it.itemId){
                 R.id.contact -> {openDialerWithNumber("8697580473")}
                 R.id.emailMenu -> {openGmail()}
@@ -165,7 +168,7 @@ class student_dashboard : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
+        if (toggle_faculty.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)

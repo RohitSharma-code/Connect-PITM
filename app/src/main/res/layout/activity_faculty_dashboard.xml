@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/faculty_dash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.student_dashboard"
+    android:fitsSystemWindows="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/topAppBar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar_fac"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="CONNECT PITM"
+                app:titleTextColor="@color/black"
+                app:titleCentered="true"
+                android:background="@drawable/toolbarsvg"
+                app:navigationIcon="@drawable/navigation_iconsvg"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.codebyashish.autoimageslider.AutoImageSlider
+            android:id="@+id/autoImageSlider_fac"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            app:ais_auto_sliding="true"
+            app:ais_corner_radius="15"
+            app:ais_indicator_align="@string/center"
+            app:ais_placeholder="@drawable/placeholder_default_loading"
+            app:ais_time_interval="5000"
+            app:ais_title_background="@drawable/text_background"
+            app:layout_constraintTop_toBottomOf="@id/topAppBar_layout"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/recyclerView_fac"
+            android:background="#FFFFFF"
+            android:paddingBottom="16dp"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/autoImageSlider_fac"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:flow_horizontalAlign="end"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView_fac"
+        android:layout_gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu"
+        >
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

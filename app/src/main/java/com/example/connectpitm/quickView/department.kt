@@ -12,7 +12,6 @@ import com.example.connectpitm.R
 class department : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_department)
 
         val bba_CardView : CardView = findViewById(R.id.bba_CardView)

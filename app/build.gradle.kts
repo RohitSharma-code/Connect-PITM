@@ -27,14 +27,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures{
         dataBinding = true
+        viewBinding = true
     }
 }
 
@@ -47,6 +48,10 @@ dependencies {
 
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.cardview)
+    implementation(libs.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -55,5 +60,6 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.webkit:webkit:1.9.0")
     implementation("com.github.skydoves:balloon:1.6.12") //For Balloon like tooltip
+
 
 }

@@ -8,8 +8,14 @@
     </style>
 
     <style name="Theme.ConnectPITM" parent="BaseTheme.ConnectPITM" />
+
     <style name="MyTextInputLayoutAppereance" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="boxStrokeColor">@color/boxStrokeColour</item>
         <item name="strokeColor">@color/boxStrokeColour</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ConnectPITM" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 </resources>

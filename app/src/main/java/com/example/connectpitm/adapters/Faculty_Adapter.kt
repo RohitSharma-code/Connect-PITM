@@ -7,26 +7,19 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.connectpitm.R
+import com.example.connectpitm.models.Faculty_Model
 import com.example.connectpitm.models.dashboardModel
-import com.example.connectpitm.quickView.quickView_dashboard
 
-//      Adapter
-//      moduleList stores the image and module names
-class dashboard_Adapter(
-    val moduleList: List<dashboardModel>,
-    val clickListener: (dashboardModel) -> Unit
-) : RecyclerView.Adapter<dashboard_Adapter.ViewHolder>() {
-
-
-    //ViewHolder
+class Faculty_Adapter(val moduleList: List<Faculty_Model>,
+                      val clickListener: (Faculty_Model) -> Unit): RecyclerView.Adapter<Faculty_Adapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var moduleNameView: TextView = itemView.findViewById(R.id.moduleName)
-        var moduleImageView: ImageView = itemView.findViewById(R.id.moduleImage)
+        var facNameView: TextView = itemView.findViewById(R.id.moduleName)
+        var facImageView: ImageView = itemView.findViewById(R.id.moduleImage)
 
-        fun bind(model: dashboardModel){
-            moduleNameView.text = model.moduleName
-            moduleImageView.setImageResource(model.moduleImage)
+        fun bind(model: Faculty_Model){
+            facNameView.text = model.itemName
+            facImageView.setImageResource(model.itemImg)
 
             itemView.setOnClickListener {
                 clickListener(model)
@@ -35,7 +28,7 @@ class dashboard_Adapter(
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Faculty_Adapter.ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.dashboard_module, parent, false)
         return ViewHolder(view)
@@ -45,9 +38,8 @@ class dashboard_Adapter(
         return moduleList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: Faculty_Adapter.ViewHolder, position: Int) {
         holder.bind(moduleList[position])
     }
-
 
 }

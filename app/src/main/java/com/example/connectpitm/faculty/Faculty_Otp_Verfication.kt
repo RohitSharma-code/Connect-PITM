@@ -1,4 +1,4 @@
-package com.example.connectpitm.activities
+package com.example.connectpitm.faculty
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,38 +8,40 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.connectpitm.R
-import com.example.connectpitm.databinding.ActivityOtpVerificationBinding
+import com.example.connectpitm.databinding.ActivityFacultyOtpVerficationBinding
 
-class otp_Verification : AppCompatActivity() {
-    lateinit var binding: ActivityOtpVerificationBinding
+class Faculty_Otp_Verfication : AppCompatActivity() {
+    lateinit var binding: ActivityFacultyOtpVerficationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_otp_verification)
-        val verifyOtp_btn: Button = findViewById(R.id.verifyOtp_btn)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_faculty_otp_verfication)
+
+        val verifyOtp_btn: Button = findViewById(R.id.verifyOtp_btn_faculty)
         verifyOtp_btn.setOnClickListener {
             // Explicit Intent to navigate to SecondActivity
-            val intent = Intent(this, Registration_Successful::class.java)
+            val intent = Intent(this, Faculty_Registration_Successful::class.java)
             startActivity(intent) // Start SecondActivity
         }
         setOtpInputListener()
     }
     private fun setOtpInputListener(){
         binding.apply {
-            box1.addTextChangedListener(otpTextWatcher(box1, box2, null))
-            box2.addTextChangedListener(otpTextWatcher(box2, box3, box1))
-            box3.addTextChangedListener(otpTextWatcher(box3, box4, box2))
-            box4.addTextChangedListener(otpTextWatcher(box4, box5, box3))
-            box5.addTextChangedListener(otpTextWatcher(box5, box6, box4))
-            box6.addTextChangedListener(otpTextWatcher(box6, null, box5))
+            box1.addTextChangedListener(otpTextWatcher_Faculty(box1, box2, null))
+            box2.addTextChangedListener(otpTextWatcher_Faculty(box2, box3, box1))
+            box3.addTextChangedListener(otpTextWatcher_Faculty(box3, box4, box2))
+            box4.addTextChangedListener(otpTextWatcher_Faculty(box4, box5, box3))
+            box5.addTextChangedListener(otpTextWatcher_Faculty(box5, box6, box4))
+            box6.addTextChangedListener(otpTextWatcher_Faculty(box6, null, box5))
         }
     }
+
 }
 
-class otpTextWatcher(private val currentEditText: EditText, private val nextEditText: EditText?, private val previousEditText: EditText?): TextWatcher, View.OnKeyListener{
+
+class otpTextWatcher_Faculty(private val currentEditText: EditText, private val nextEditText: EditText?, private val previousEditText: EditText?): TextWatcher, View.OnKeyListener{
     init {
         currentEditText.setOnKeyListener(this)
     }

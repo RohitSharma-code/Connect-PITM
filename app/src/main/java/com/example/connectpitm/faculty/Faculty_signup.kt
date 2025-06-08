@@ -1,4 +1,4 @@
-package com.example.connectpitm.activities
+package com.example.connectpitm.faculty
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,63 +6,44 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.connectpitm.R
-import com.example.connectpitm.activities.Registration_Successful
-import com.example.connectpitm.databinding.ActivitySignupBinding
+import com.example.connectpitm.databinding.ActivityFacultySignupBinding
 import com.skydoves.balloon.ArrowPositionRules
 import com.skydoves.balloon.Balloon
 import com.skydoves.balloon.BalloonAnimation
 import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.showAlignTop
 
-class signup : AppCompatActivity() {
-    lateinit var binding: ActivitySignupBinding
-
+class Faculty_signup : AppCompatActivity() {
+    lateinit var binding: ActivityFacultySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_signup)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_faculty_signup)
 
-        binding.signUpBtn.setOnClickListener {
+        binding.signUpBtnFaculty.setOnClickListener {
             validateFields() //validate the conditions
         }
         setUpDrawableClickListener() //Calling the EndDrawable click function
-        dropDown() //Calling the dropDown function
 
         binding.login.setOnClickListener {
-            val intent = Intent(this, login::class.java)
+            val intent = Intent(this, Faculty_Login::class.java)
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
 
         }
-
-    }
-
-    //For DropDown semester list
-    fun dropDown() {
-        // get reference to the string array that we just created
-        val semester = resources.getStringArray(R.array.semester)
-        // create an array adapter and pass the required parameter
-        // in our case pass the context, drop down layout , and array.
-        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, semester)
-        // get reference to the autocomplete text view
-        val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
-        // set adapter to the autocomplete tv to the arrayAdapter
-        autocompleteTV.setAdapter(arrayAdapter)
     }
 
 
     //setting the attributes of all edit text in separate function
     fun setUpDrawableClickListener() {
-        setEndDrawableClickListener(binding.clgRollNoBox, R.string.clgRollNo)
         setEndDrawableClickListener(binding.emailBox, R.string.emailId)
         setEndDrawableClickListener(binding.passwordBox, R.string.passwordCriteria)
+        setEndDrawableClickListener(binding.passwordConfirmationBox, R.string.passwordSame)
     }
 
     //Email Checking
@@ -81,11 +62,6 @@ class signup : AppCompatActivity() {
         //.{8,64} → length between 8 and 64 characters
         val passwordPattern = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#\$%^&+=!]).{8,64}$")
         return password.matches(passwordPattern)
-    }
-
-    fun tenDigitRollNo(rollNo: String): Boolean{
-        val tenDigit = Regex(".{10}$")
-        return rollNo.matches(tenDigit)
     }
     //Creating the popupWindow like balloon
     @SuppressLint("SuspiciousIndentation")
@@ -112,46 +88,31 @@ class signup : AppCompatActivity() {
             .setLifecycleOwner(this)
             .build()
 
-            // Show balloon above EditText
-            view.showAlignTop(balloon)
+        // Show balloon above EditText
+        view.showAlignTop(balloon)
 
-            // Dismiss after short time
-            balloon.dismissWithDelay(2000)
+        // Dismiss after short time
+        balloon.dismissWithDelay(2000)
 
     }
 
     //All validation of Edit text and set exclamation in endDrawable
     fun validateFields() {
-        val clgRollNo = binding.clgRollNoBox.text.toString()
         val email = binding.emailBox.text.toString()
         val password = binding.passwordBox.text.toString()
-        val dropDown = binding.autoCompleteTextView.text.toString()
+        val confirmPass = binding.passwordConfirmationBox.text.toString()
 
         //Accessing the drawable file
         val drawable = ContextCompat.getDrawable(this, R.drawable.exclamation_mark)
 
         //Reset it first
-        binding.clgRollNoBox.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
         binding.emailBox.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
         binding.passwordBox.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
+        binding.passwordConfirmationBox.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
 
 
         //Switch case
         when {
-            clgRollNo.isEmpty() || !tenDigitRollNo(clgRollNo) -> {
-                binding.clgRollNoBox.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null)
-                createBalloon(
-                    this, R.string.clgRollNo,
-                    binding.clgRollNoBox
-                )
-                return
-            }
-
-            dropDown.isEmpty() -> {
-                Toast.makeText(this, "Please select the semester", Toast.LENGTH_SHORT).show()
-
-            }
-
             email.isEmpty() || !isValidEmail(email) -> {
                 binding.emailBox.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null)
                 createBalloon(
@@ -171,9 +132,13 @@ class signup : AppCompatActivity() {
                 return
             }
 
+            confirmPass.isEmpty() || !(password == confirmPass) -> {
+                Toast.makeText(this, R.string.passwordSame, Toast.LENGTH_SHORT).show()
+            }
+
             else -> {
-                if (clgRollNo.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && dropDown.isNotEmpty()) {
-                    val intent = Intent(this, otp_Verification::class.java)
+                if (email.isNotEmpty() && password.isNotEmpty() && confirmPass.isNotEmpty()) {
+                    val intent = Intent(this, Faculty_Otp_Verfication::class.java)
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent) // Start SecondActivity
 
@@ -203,4 +168,3 @@ class signup : AppCompatActivity() {
         }
     }
 }
-

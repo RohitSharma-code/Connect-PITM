@@ -11,7 +11,6 @@ import com.example.connectpitm.R
 class BCA : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_bca)
 
         //        define WebView
