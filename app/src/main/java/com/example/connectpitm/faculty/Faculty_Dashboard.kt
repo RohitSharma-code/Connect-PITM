@@ -70,13 +70,13 @@ class Faculty_Dashboard : AppCompatActivity() {
         val adapter = Faculty_Adapter(moduleList){ model ->
             when(model.itemName){
                 "Website" -> {
-                    val url = "https://xhaccess.com/tags/xnxx-indian"
+                    val url = "https://www.pitmkol.com"
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     startActivity(intent)
                 }
 
                 "Portal" -> {
-                    val url = "https://xhaccess.com/videos/indian-teen-sali-fucked-by-her-jija-a-day-before-her-wedding-xhXZppW"
+                    val url = "https://www.makautexam.net/"
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                     startActivity(intent)
                 }
