@@ -22,12 +22,21 @@ class Faculty_Details : AppCompatActivity() {
         // Data Source: List of game list object
         var newFacultyList: ArrayList<Faculty_Details_Model> = ArrayList()
 
-        var f1 = Faculty_Details_Model(R.drawable.navigation_iconsvg, "Aman", "BCA", "Gandu")
-        var f2 = Faculty_Details_Model(R.drawable.drawer_header_logo, "Nasir", "BCA", "Ladhchat")
-        var f3 = Faculty_Details_Model(R.drawable.slide1, "Abhishek", "BCA", "Harami")
-        var f4 = Faculty_Details_Model(R.drawable.moduleimg2, "Piyush", "BCA", "Nuni")
-        var f5 = Faculty_Details_Model(R.drawable.facultysvg, "Taufique", "BCA", "land")
-        var f6 = Faculty_Details_Model(R.drawable.navigation_iconsvg, "Rajesh", "BCA", "paglachoda")
+        var f1 = Faculty_Details_Model(R.drawable.faculty_photo, "Dr. Arnab Chattopadhyay", "Principle", "NA")
+        var f2 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Shourya Sikhar Kar", "Director", "NA")
+        var f3 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Dipanjan Kumar Dey", "HOD BCA", "NA")
+        var f4 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Anuradha Chatterjee", "HOD BBA", "NA")
+        var f5 = Faculty_Details_Model(R.drawable.faculty_photo, "Dr. Sanjukta Mallick Chattopadhyay", "BCA", "NA")
+        var f6 = Faculty_Details_Model(R.drawable.faculty_photo, "Dr. Paramita Sarkar", "BCA", "NA")
+        var f7 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Nandini Mitra", "BCA", "NA")
+        var f8 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Rajib Chandra Kumar", "BCA", "NA")
+        var f9 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Rammani Sarkar", "BCA", "NA")
+        var f10 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Monsori Kar", "BCA", "NA")
+        var f11 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Koushani Chakraborty", "BCA", "NA")
+        var f12 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Anindita Dey", "BCA", "NA")
+        var f13 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Sayan Chakraborty", "BCA", "NA")
+        var f14 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Ruma Mukhopadhyay", "BCA", "NA")
+        var f15 = Faculty_Details_Model(R.drawable.faculty_photo, "Prof. Sudipa Chakraborty", "BCA", "NA")
 
         newFacultyList.add(f1)
         newFacultyList.add(f2)
@@ -35,10 +44,18 @@ class Faculty_Details : AppCompatActivity() {
         newFacultyList.add(f4)
         newFacultyList.add(f5)
         newFacultyList.add(f6)
+        newFacultyList.add(f7)
+        newFacultyList.add(f8)
+        newFacultyList.add(f9)
+        newFacultyList.add(f10)
+        newFacultyList.add(f11)
+        newFacultyList.add(f12)
+        newFacultyList.add(f13)
+        newFacultyList.add(f14)
+        newFacultyList.add(f15)
 
         //3. Adapter
         val adapter = Faculty_Details_Adapter(newFacultyList)
         recyclerView.adapter = adapter
-
     }
 }

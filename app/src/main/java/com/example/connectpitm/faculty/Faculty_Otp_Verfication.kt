@@ -8,6 +8,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.connectpitm.R
@@ -21,9 +22,21 @@ class Faculty_Otp_Verfication : AppCompatActivity() {
 
         val verifyOtp_btn: Button = findViewById(R.id.verifyOtp_btn_faculty)
         verifyOtp_btn.setOnClickListener {
+            val otp1 = binding.box1.text.toString().trim()
+            val otp2 = binding.box2.text.toString().trim()
+            val otp3 = binding.box3.text.toString().trim()
+            val otp4 = binding.box4.text.toString().trim()
+            val otp5 = binding.box5.text.toString().trim()
+            val otp6 = binding.box6.text.toString().trim()
             // Explicit Intent to navigate to SecondActivity
-            val intent = Intent(this, Faculty_Registration_Successful::class.java)
-            startActivity(intent) // Start SecondActivity
+            if (otp1.isNotEmpty() && otp2.isNotEmpty() && otp3.isNotEmpty() && otp4.isNotEmpty() && otp5.isNotEmpty() && otp6.isNotEmpty()){
+                val intent = Intent(this, Faculty_Registration_Successful::class.java)
+                startActivity(intent) // Start SecondActivity
+            }
+            else{
+                Toast.makeText(this, "Fill the otp!", Toast.LENGTH_SHORT).show()
+            }
+
         }
         setOtpInputListener()
     }

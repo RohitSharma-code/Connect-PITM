@@ -8,11 +8,13 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.connectpitm.R
 import com.example.connectpitm.databinding.ActivityOtpVerificationBinding
+import com.example.connectpitm.faculty.Faculty_Registration_Successful
 
 class otp_Verification : AppCompatActivity() {
     lateinit var binding: ActivityOtpVerificationBinding
@@ -21,9 +23,21 @@ class otp_Verification : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_otp_verification)
         val verifyOtp_btn: Button = findViewById(R.id.verifyOtp_btn)
         verifyOtp_btn.setOnClickListener {
+            val otp1 = binding.box1.text.toString().trim()
+            val otp2 = binding.box2.text.toString().trim()
+            val otp3 = binding.box3.text.toString().trim()
+            val otp4 = binding.box4.text.toString().trim()
+            val otp5 = binding.box5.text.toString().trim()
+            val otp6 = binding.box6.text.toString().trim()
             // Explicit Intent to navigate to SecondActivity
-            val intent = Intent(this, Registration_Successful::class.java)
-            startActivity(intent) // Start SecondActivity
+            if (otp1.isNotEmpty() && otp2.isNotEmpty() && otp3.isNotEmpty() && otp4.isNotEmpty() && otp5.isNotEmpty() && otp6.isNotEmpty()){
+                // Explicit Intent to navigate to SecondActivity
+                val intent = Intent(this, Registration_Successful::class.java)
+                startActivity(intent) // Start SecondActivity
+            }
+            else{
+                Toast.makeText(this, "Fill the otp!", Toast.LENGTH_SHORT).show()
+            }
         }
         setOtpInputListener()
     }
